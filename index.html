@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>reCAPTHA fallback with MTCaptcha - Demo</title>
+    <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+    <script>
+      mtcaptchaConfig = {
+        "sitekey": "<MTCaptcha public key>",
+        "render": "explicit",
+        "renderQueue": []
+      };
+      (function(){var mt_service = document.createElement('script');mt_service.async = true;mt_service.src = 'https://service.mtcaptcha.com/mtcv1/client/mtcaptcha.min.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(mt_service);
+        var mt_service2 = document.createElement('script');mt_service2.async = true;mt_service2.src = 'https://service.mtcaptcha.com/mtcv1/client/mtcaptcha2.min.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(mt_service2);}) ();
+   </script>
+    <script type="text/javascript"  src='/scripts/mtsafeloader.js' async defer></script>
+  </head>
+  <body>
+    <h1>reCAPTHA fallback with MTCaptcha - Demo</h1>
+    <form id="comment_form" action="form.php" method="post">
+      <input type="email" placeholder="Type your email" size="40"><br><br>
+      <textarea name="comment" rows="8" cols="39"></textarea><br><br>
+      <div class="g-recaptcha" data-sitekey="<Google Recaptcha siteid>"></div>
+      <div  id="mt1" class="mtcaptcha" style="display:none; visibility:hidden"></div>
+      <input type="submit" name="submit" value="Post comment"><br><br>
+    </form>
+  </body>
+</html>
