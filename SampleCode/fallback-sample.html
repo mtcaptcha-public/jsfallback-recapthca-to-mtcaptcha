@@ -2,7 +2,13 @@
   <head>
   
     <!-- import reCaptcha lib -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <scriptz src="https://www.google.com/recaptcha/api.js" async defer></scriptz>
+    <script>
+	var s = document.createElement('script');
+	s.async = true;
+	s.src = "https://www.google.com/recaptcha/api.js";
+	document.getElementsByTagName('body')[0]).appendChild(s);
+    </script>
     
     
     <!-- MTCaptcha Config and import -->
