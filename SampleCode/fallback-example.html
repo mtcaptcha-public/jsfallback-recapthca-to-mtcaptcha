@@ -1,0 +1,116 @@
+<html>
+  <head>
+  
+    <!-- import reCaptcha lib -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
+    
+    <!-- MTCaptcha Config and import -->
+    <script>
+    var mtcaptchaConfig = {
+      "sitekey": "<MTCaptcha SiteKey>",  // MUST REPLACE with your MTCaptcha sitekey 
+      "render": "explicit",              // MUST be 'explicit' to prevent automatic rendering
+      "renderQueue": []                  // array needed for explicit rendering
+    };
+	
+    (function(){var mt_service = document.createElement('script');mt_service.async = true;mt_service.src = 'https://service.mtcaptcha.com/mtcv1/client/mtcaptcha.min.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(mt_service);
+    var mt_service2 = document.createElement('script');mt_service2.async = true;mt_service2.src = 'https://service2.mtcaptcha.com/mtcv1/client/mtcaptcha2.min.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(mt_service2);}) ();
+    </script>
+    
+  
+    <!-- Fallback JS Code -->
+    <script>
+
+    window.captchaFB = {};
+
+    (function(){
+    var fb = window.captchaFB;
+
+    fb.timeoutID = null;  
+    
+    fb.waitForReCaptcha = function(seconds)
+    {
+      if(fb.timeoutID)
+        clearTimeout(fb.timeoutID);  
+      fb.timeoutID = setTimeout(fb.checkReCaptchaOrRenderMT, seconds*1000);
+    }
+
+    fb.checkReCaptchaOrRenderMT = function()
+    { 
+      var reCaptchaLoaded = (window.recaptcha ? true: false);
+      if( ! reCaptchaLoaded )
+      {
+        fb.removeReCaptcha();
+        fb.renderMTCaptcha();
+      }
+
+      fb.timeoutID = null;
+    }
+
+    fb.removeReCaptcha = function(){
+      var es = document.getElementsByClassName("g-recaptcha");
+      var e  = (es && es[0] ? es[0] : null); 
+      if(!e)
+        return;
+      e.style.visibility ="hidden";
+      e.style.display    ="none";
+      e.parentNode.removeChild(e);
+    }
+
+    fb.renderMTCaptcha = function()
+    {
+      var es = document.getElementsByClassName("mtcaptcha");
+      var e  = (es && es[0] ? es[0] : null); 
+      if(!e)
+        return;
+
+      e.style.visibility ="visible";
+      e.style.display    ="initial";
+      mtcaptchaConfig.renderQueue.push("mtcaptcha");
+    }
+    }) ();
+
+    
+    captchaFB.waitForReCaptcha(15);  // wait for 12 seconds     
+    
+    </script>
+   
+  </head>
+  
+  <body>
+  
+  <form action="?" method="POST">
+    <table border="0" cellpadding="5" cellspacing="2" >
+      <tr>
+        <td>Username: </td>
+        <td><input type="text" name="username" value=""></td>
+      <tr>
+      <tr>
+        <td>Password: </td>
+        <td><input type="text" name="password" value=""></td>
+      <tr>      
+      <tr>
+        <td>Captcha: </td>
+        <td>      
+        
+          <div class="g-recaptcha" data-sitekey="<Your ReCaptcha SiteKey>"></div>
+          <div class="mtcaptcha" style="display:none; visibility:hidden"></div>
+
+      </td>
+      <tr>
+    </table>  
+
+        <br/>
+        <input type="submit" value="Submit">
+  </form>
+  
+  <hr>
+  
+  <div>
+    <b>REFERENCE</b> <br>
+    MTCaptcha Explicit Render: <a href="https://www.mtcaptcha.com/dev-guide-explicit-render">https://www.mtcaptcha.com/dev-guide-explicit-render</a>
+  </div>
+  
+  </body>
+
+</html>
