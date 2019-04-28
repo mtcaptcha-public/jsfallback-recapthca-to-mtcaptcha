@@ -1,21 +1,22 @@
 <html>
   <head>
   
+    <!-- 
+      NOTE: To try this page 
+      1) Replace '<reCaptcha SiteKey>' with your reCaptcha SITE KEY
+      2) Replace '<MTCaptcha SiteKey>' with your MTCaptcha SITE KEY
+    -->	  
+	  
+	  
     <!-- import reCaptcha lib -->
-    <scriptz src="https://www.google.com/recaptcha/api.js" async defer></scriptz>
-    <script>
-	var s = document.createElement('script');
-	s.async = true;
-	s.src = "https://www.google.com/recaptcha/api.js";
-	document.getElementsByTagName('body')[0]).appendChild(s);
-    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     
     
     <!-- MTCaptcha Config and import -->
     <!-- See MTCaptcha Explicit Render:  https://www.mtcaptcha.com/dev-guide-explicit-render  -->	  
     <script>
     var mtcaptchaConfig = {
-      "sitekey": "MTPublic-VbK2WezVV",  // MUST REPLACE with your MTCaptcha sitekey 
+      "sitekey": "<MTCaptcha SiteKey>",  // MUST REPLACE with your MTCaptcha sitekey 
       "render": "explicit",              // MUST be 'explicit' to prevent automatic rendering
       "renderQueue": []                  // array needed for explicit rendering
     };
@@ -26,7 +27,7 @@
     
   
 	  
-    <!-- Fallback JS Code -->
+    <!-- RECAPTCHA TO MTCAPTCHA FALLBACK JS CODE START -->
     <script>
 
     window.captchaFB = {};
@@ -81,7 +82,9 @@
     captchaFB.waitForReCaptcha(15);    // wait for 12 seconds     
     
     </script>
-   
+    <!-- RECAPTCHA TO MTCAPTCHA FALLBACK JS CODE END -->   
+	  
+	  
   </head>
   <body>
   
@@ -99,8 +102,11 @@
       <tr>
         <td>Captcha: </td>
         <td>      
-        
-          <div class="g-recaptcha" data-sitekey="6Lf6BEMUAAAAAIWjORN8ozbJVhuv1E33F0WnJS0I"></div>
+		
+          <!-- RECAPTCHA DIV -->
+          <div class="g-recaptcha" data-sitekey="<reCaptcha SiteKey>"></div>
+		
+	  <!-- MTCAPTCHA DIV, defaults to hidden and invisible -->	
           <div class="mtcaptcha" style="display:none; visibility:hidden"></div>
 
       </td>
