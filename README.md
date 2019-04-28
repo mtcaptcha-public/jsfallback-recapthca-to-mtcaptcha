@@ -3,6 +3,6 @@ Sample javascript code to fallback on to MTCaptcha if reCaptcha does not load fo
 
 
 REFERENCE
-reCaptcha: https://www.google.com/recaptcha/ <br>
-MTCaptcha: https://www.mtcaptcha.com/
+- reCaptcha: https://www.google.com/recaptcha/ 
+- MTCaptcha: https://www.mtcaptcha.com/
 
