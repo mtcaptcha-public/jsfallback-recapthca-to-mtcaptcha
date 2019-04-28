@@ -6,6 +6,7 @@
     
     
     <!-- MTCaptcha Config and import -->
+    <!-- See MTCaptcha Explicit Render:  https://www.mtcaptcha.com/dev-guide-explicit-render  -->	  
     <script>
     var mtcaptchaConfig = {
       "sitekey": "<MTCaptcha SiteKey>",  // MUST REPLACE with your MTCaptcha sitekey 
@@ -18,6 +19,7 @@
     </script>
     
   
+	  
     <!-- Fallback JS Code -->
     <script>
 
@@ -69,17 +71,16 @@
       mtcaptchaConfig.renderQueue.push("mtcaptcha");
     }
     }) ();
-
     
-    captchaFB.waitForReCaptcha(15);  // wait for 12 seconds     
+    captchaFB.waitForReCaptcha(15);    // wait for 12 seconds     
     
     </script>
    
   </head>
-  
   <body>
   
   <form action="?" method="POST">
+	  
     <table border="0" cellpadding="5" cellspacing="2" >
       <tr>
         <td>Username: </td>
@@ -104,13 +105,5 @@
         <input type="submit" value="Submit">
   </form>
   
-  <hr>
-  
-  <div>
-    <b>REFERENCE</b> <br>
-    MTCaptcha Explicit Render: <a href="https://www.mtcaptcha.com/dev-guide-explicit-render">https://www.mtcaptcha.com/dev-guide-explicit-render</a>
-  </div>
-  
   </body>
-
 </html>
