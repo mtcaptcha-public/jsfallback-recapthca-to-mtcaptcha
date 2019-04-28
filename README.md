@@ -1,5 +1,5 @@
 # Javascript Fallback reCapthca to MTCaptcha
-Sample javascript code to fallback on to MTCaptcha if reCaptcha does not load for any reason (say in China).
+Sample javascript code to fallback on to MTCaptcha if reCaptcha does not load for any reason (say sometimes in China).
 
 
 REFERENCE
