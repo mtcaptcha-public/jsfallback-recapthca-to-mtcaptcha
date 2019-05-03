@@ -2,3 +2,7 @@ theme: jekyll-theme-slate
 
 plugins:
   - jekyll-seo-tag
+
+title: MTCaptcha Recaptcha Fallback Sample Code
+
+description: Sample javascript code to fallback on to MTCaptcha if reCaptcha does not load for any reason.
