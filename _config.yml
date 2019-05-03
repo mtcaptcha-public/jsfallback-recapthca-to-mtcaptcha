@@ -5,4 +5,4 @@ plugins:
 
 title: MTCaptcha Recaptcha Fallback Sample Code
 
-description: Sample javascript code to fallback on to MTCaptcha if reCaptcha does not load for any reason.
+description: Sample javascript code to fallback on to MTCaptcha if reCaptcha fail to load in China or other reasons.
