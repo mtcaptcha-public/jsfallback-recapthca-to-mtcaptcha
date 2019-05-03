@@ -8,7 +8,7 @@ Sample javascript code to fallback on to MTCaptcha if reCaptcha fail to load in 
 See [MTCaptcha.com](https://www.mtcaptcha.com/) <br >
 MTCaptcha is a smart and beautiful looking Captcha service build for the enterprise and is Privacy (GDPR) and Accessibility (VPAT) compliant.  
 
-<img src="https://raw.githubusercontent.com/mtcaptcha-public/MTCaptcha-Direct-Token-Decryption/master/_www/assets/sample-01-sm.png" title="MTCaptcha Sample Screenshot 01"/>
+<img src="https://raw.githubusercontent.com/mtcaptcha-public/MTCaptcha-Direct-Token-Decryption/master/_www/assets/sample-04-sm.png" title="MTCaptcha Sample Screenshot 04"/>
 
 
 License: [Apache 2.0](https://github.com/mtcaptcha-public/MTCaptcha-Javascript-Fallback-from-ReCaptcha/blob/master/LICENSE)
