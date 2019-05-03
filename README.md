@@ -1,6 +1,8 @@
 # reCapthca to MTCaptcha Javascript Fallback 
 Sample javascript code to fallback on to MTCaptcha if reCaptcha fail to load in China or for other reasons
 
+<b>[Sample Code](https://github.com/mtcaptcha-public/MTCaptcha-Javascript-Fallback-from-ReCaptcha/blob/master/SampleCode/fallback-sample.html)</b>
+
 
 See [MTCaptcha.com](https://www.mtcaptcha.com/) <br >
 MTCaptcha is a smart and beautiful looking Captcha service build for the enterprise and is Privacy (GDPR) and Accessibility (VPAT) compliant.  
